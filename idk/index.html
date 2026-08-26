@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Experience of 27/8/26</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body>
+
+    <main id="app">
+
+        <section class="entry-screen">
+
+            <div class="entry-glow"></div>
+
+            <div class="entry-card">
+
+                <p class="eyebrow">
+                    EXPERIENCE • 27/8/26
+                </p>
+
+                <h1>
+                    Open this website alone 👀
+                </h1>
+
+                <p class="entry-subtitle">
+                    Seriously... abhi kisi aur ko mat dikhana 😭
+                </p>
+
+
+                <form id="entryForm">
+
+                    <div class="input-group">
+
+                        <label for="name">
+                            Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            autocomplete="off"
+                            placeholder="Your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            autocomplete="off"
+                            placeholder="Password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        id="enterButton"
+                    >
+                        Enter the Experience →
+                    </button>
+
+                </form>
+
+
+                <p
+                    id="entryMessage"
+                    class="entry-message"
+                    aria-live="polite"
+                ></p>
+
+
+                <p class="privacy-note">
+                    🔒 Just a small private experience.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        /* =========================================
+           PRIVATE EXPERIENCE ENTRY
+           ========================================= */
+
+        const ENTRY_NAME = "Avani";
+        const ENTRY_PASSWORD = "27/08/2026";
+
+
+        /* =========================================
+           ELEMENTS
+           ========================================= */
+
+        const entryForm =
+            document.getElementById("entryForm");
+
+        const entryMessage =
+            document.getElementById("entryMessage");
+
+        const enterButton =
+            document.getElementById("enterButton");
+
+        const nameInput =
+            document.getElementById("name");
+
+        const passwordInput =
+            document.getElementById("password");
+
+
+        /* =========================================
+           FORM SUBMIT
+           ========================================= */
+
+        entryForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    nameInput.value.trim();
+
+                const password =
+                    passwordInput.value.trim();
+
+
+                /* ---------------------------------
+                   EMPTY FIELDS
+                   --------------------------------- */
+
+                if (!name || !password) {
+
+                    entryMessage.textContent =
+                        "Please fill in both fields.";
+
+                    return;
+
+                }
+
+
+                /* ---------------------------------
+                   CHECKING
+                   --------------------------------- */
+
+                enterButton.disabled = true;
+
+                enterButton.textContent =
+                    "Checking...";
+
+                entryMessage.textContent =
+                    "";
+
+
+                /* ---------------------------------
+                   CORRECT NAME + PASSWORD
+                   --------------------------------- */
+
+                if (
+                    name.toLowerCase() ===
+                    ENTRY_NAME.toLowerCase()
+                    &&
+                    password ===
+                    ENTRY_PASSWORD
+                ) {
+
+                    entryMessage.textContent =
+                        "Access granted. 👀";
+
+                    enterButton.textContent =
+                        "Entering...";
+
+                    setTimeout(() => {
+
+                        window.location.href =
+                            "experience.html";
+
+                    }, 500);
+
+                    return;
+
+                }
+
+
+                /* ---------------------------------
+                   WRONG PASSWORD
+                   --------------------------------- */
+
+                if (
+                    name.toLowerCase() ===
+                    ENTRY_NAME.toLowerCase()
+                ) {
+
+                    entryMessage.textContent =
+                        "Incorrect password.";
+
+                }
+
+
+                /* ---------------------------------
+                   WRONG NAME
+                   --------------------------------- */
+
+                else {
+
+                    entryMessage.textContent =
+                        "This experience isn't for you 👀";
+
+                }
+
+
+                /* ---------------------------------
+                   RESET BUTTON
+                   --------------------------------- */
+
+                enterButton.disabled = false;
+
+                enterButton.textContent =
+                    "Enter the Experience →";
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
