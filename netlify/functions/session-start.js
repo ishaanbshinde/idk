@@ -115,8 +115,8 @@ exports.handler = async (event) => {
             body: JSON.stringify({
                 success: false,
                 error: "Internal server error"
-            });
-        }
+            })
+        };
 
     }
 
