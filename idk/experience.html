@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Just for YOU</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <main id="app">
+
+        <!-- =========================================
+             EXPERIENCE
+             ========================================= -->
+
+        <section
+            class="experience-screen"
+            id="experienceScreen"
+        >
+
+            <!-- =====================================
+                 INTRO
+                 ===================================== -->
+
+            <section
+                class="intro-section"
+                id="introSection"
+            >
+
+                <div class="eyebrow">
+                    Um..👉👈 look it yourself....
+                </div>
+
+
+                <h1
+                    class="intro-title"
+                    id="introTitle"
+                >
+                    Hi.
+                </h1>
+
+
+                <p
+                    class="intro-text"
+                    id="introText"
+                >
+                    Just wait...
+                </p>
+
+            </section>
+
+
+            <!-- =====================================
+                 VINYL PLAYER
+                 ===================================== -->
+
+            <section
+                class="vinyl-player"
+                id="vinylPlayer"
+            >
+
+                <div
+                    class="vinyl-disc"
+                    id="vinylDisc"
+                ></div>
+
+
+                <div class="vinyl-info">
+
+                    <div class="vinyl-label">
+                        Now playing
+                    </div>
+
+
+                    <div
+                        class="vinyl-title"
+                        id="trackTitle"
+                    >
+                        I Wanna Be Yours
+                    </div>
+
+
+                    <div
+                        class="vinyl-artist"
+                        id="trackArtist"
+                    >
+                        Ishan
+                    </div>
+
+
+                    <div class="music-controls">
+
+                        <button
+                            type="button"
+                            id="prevTrack"
+                            aria-label="Previous song"
+                        >
+                            ←
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="playPause"
+                            aria-label="Play or pause"
+                        >
+                            ▶
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="nextTrack"
+                            aria-label="Next song"
+                        >
+                            →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 Q&A
+                 ===================================== -->
+
+            <section
+                class="qa-section"
+                id="qaSection"
+                hidden
+            >
+
+                <div class="qa-header">
+
+                    <div class="eyebrow">
+                        Okay... your turn 👀
+                    </div>
+
+
+                    <h2>
+                        I have questions.
+                    </h2>
+
+
+                    <p>
+                        Be honest. I'm actually reading these. 😭
+                    </p>
+
+                </div>
+
+
+                <!-- =================================
+                     QUESTION CARD
+                     ================================= -->
+
+                <div
+                    class="question-card"
+                    id="questionCard"
+                >
+
+                    <div
+                        class="question-number"
+                        id="questionNumber"
+                    >
+                        Question 01
+                    </div>
+
+
+                    <h3
+                        class="question-text"
+                        id="questionText"
+                    >
+                        Loading...
+                    </h3>
+
+
+                    <!-- TEXT ANSWER -->
+
+                    <textarea
+                        class="answer-textarea"
+                        id="answerInput"
+                        placeholder="Type your answer..."
+                        autocomplete="off"
+                        spellcheck="true"
+                    ></textarea>
+
+
+                    <!-- MULTIPLE CHOICE -->
+
+                    <div
+                        class="options-container"
+                        id="optionsContainer"
+                        hidden
+                    ></div>
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="button"
+                        id="submitAnswerButton"
+                    >
+                        Continue →
+                    </button>
+
+
+                    <p
+                        class="qa-message"
+                        id="qaMessage"
+                        aria-live="polite"
+                    ></p>
+
+                </div>
+
+
+                <!-- =================================
+                     SHIN COMPANION 🐱
+                     ================================= -->
+
+                <div
+                    class="shin-companion"
+                    id="shinCompanion"
+                    hidden
+                >
+
+                    <div class="shin-cat-frame">
+
+                        <video
+                            id="shinCat"
+                            class="shin-cat"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                        >
+
+                            <source
+                                id="shinCatSource"
+                                src="cat.memes/cat-looking-at-camera.mp4"
+                                type="video/mp4"
+                            >
+
+                            Your browser does not support video.
+
+                        </video>
+
+                    </div>
+
+
+                    <div class="shin-notebook">
+
+                        <div class="shin-name">
+                            SHIN ✍️
+                        </div>
+
+
+                        <div
+                            class="shin-writing"
+                            id="shinWriting"
+                        >
+                            Waiting...
+                        </div>
+
+
+                        <div
+                            class="shin-reaction"
+                            id="shinReaction"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 FINAL SECTION
+                 ===================================== -->
+
+            <section
+                class="final-section"
+                id="finalSection"
+                hidden
+            >
+
+                <div>
+
+                    <div class="eyebrow">
+                        One last thing...
+                    </div>
+
+
+                    <h2
+                        id="finalTitle"
+                    >
+                        So...
+                    </h2>
+
+
+                    <p
+                        id="finalText"
+                    >
+                        Just wait.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         AUDIO
+         ========================================= -->
+
+    <audio
+        id="audioPlayer"
+        preload="auto"
+    ></audio>
+
+
+    <!-- =========================================
+         EXPERIENCE LOGIC
+         ========================================= -->
+
+    <script src="js/experience.js"></script>
+
+</body>
+
+</html>
